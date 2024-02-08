@@ -32,6 +32,17 @@ const router = createRouter({
           component: () => import('../views/DynamicRouter.vue')
         },
         {
+          path: 'dynamicRouterByProps/:id',
+          component: () => import('../views/DynamicRouterByProps.vue'),
+          props: (route) => {
+            // 每次進入路由時帶出的 route；跟在元件用 this.$route 是相同的，只是改在路由表觸發
+            // console.log(route);
+            return {
+              id: route.params.id            
+            }
+          }
+        },
+        {
           path: 'namedView',
           component: () => import('../views/NamedView.vue'),
           children: [
