@@ -12,8 +12,7 @@ export default {
   props: ['id'], 
   created() {
     // const seed = "16bdf5a3165c4d42";
-    console.log(this.id);
-    const seed = this.$route.params.id;
+    const seed = this.id;
     axios.get(`https://randomuser.me/api/?seed=${seed}`)
     .then(res => {
       console.log(res);
