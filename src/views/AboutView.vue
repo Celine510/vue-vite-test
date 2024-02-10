@@ -16,6 +16,7 @@ export default {
     // console.log(import.meta.env.VITE_PATH); // 在 Vite 內載入環境變數，後方加入自定義的變數名稱
     console.log(import.meta.env.VITE_TEXT);
     const url = import.meta.env.VITE_PATH;
+    // console.dir(this.$http);
     this.$http.get(url).then((res) => {
       console.log(res);
       this.data = res.data.results[0];
